@@ -1,0 +1,129 @@
+For your Flutter project, I recommend using a Git Flow-inspired branching strategy. It keeps development, testing, and production code separate.
+
+## 1. Recommended Git branch structure
+
+```
+main
+ │
+ └── develop
+      │
+      ├── feature/app-icon-setup
+      ├── feature/authentication
+      ├── feature/home-screen
+      ├── feature/profile
+      │
+      ├── bugfix/login-validation
+      └── hotfix/crash-on-launch
+```
+
+## 2. Branch purpose
+
+| Branch      | Purpose                       |
+| ----------- | ----------------------------- |
+| `main`      | Production-ready code         |
+| `develop`   | Latest integrated development |
+| `feature/*` | New features                  |
+| `bugfix/*`  | Fix development bugs          |
+| `hotfix/*`  | Urgent production fixes       |
+| `release/*` | Prepare a new release         |
+
+## 3. Create branches
+
+Start with your main branch:
+
+```
+git branch -M main
+git push -u origin main
+```
+
+Create the development branch:
+
+```
+git checkout -b develop
+git push -u origin develop
+```
+
+Create a feature branch:
+
+```
+git checkout develop
+git pull origin develop
+
+git checkout -b feature/app-icon-setup
+```
+
+After completing your work:
+
+```
+git add .
+git commit -m "feat: configure Android and iOS app icons"
+
+git push -u origin feature/app-icon-setup
+```
+
+Then create a Pull Request:
+
+`feature/app-icon-setup` → `develop`
+
+## 4. Branch merging workflow
+
+main
+
+Production code
+
+develop
+
+Integration and testing
+
+feature / bugfix branches
+
+Individual development tasks
+
+Release process:
+
+1. Feature branches merge into `develop`.
+2. Create `release/1.0.0` from `develop`.
+3. Test and fix release issues.
+4. Merge release into `main` and `develop`.
+5. Tag the production release.
+
+## 5. Recommended branch naming conventions
+
+```
+feature/user-login
+feature/google-auth
+feature/app-icon
+feature/splash-screen
+
+bugfix/login-error
+bugfix/image-upload
+
+hotfix/payment-crash
+
+release/1.0.0
+release/1.1.0
+```
+
+## 6. Useful Git commands
+
+| Command                      | Purpose              |
+| ---------------------------- | -------------------- |
+| `git branch`                 | List local branches  |
+| `git branch -a`              | List all branches    |
+| `git switch develop`         | Switch branch        |
+| `git switch -c feature/name` | Create and switch    |
+| `git merge feature/name`     | Merge branch         |
+| `git branch -d feature/name` | Delete local branch  |
+| `git fetch --all`            | Fetch remote updates |
+
+## My recommendation
+
+For a small-to-medium Flutter application, start with these three permanent branches:
+
+- `main`
+- `develop`
+- `feature/*`
+
+Add `release/*`, `bugfix/*`, and `hotfix/*` when needed.
+
+Would you like me to prepare a complete GitHub repository setup for your Flutter project, including branch protection rules, Pull Request workflow, and GitHub Actions CI/CD?
