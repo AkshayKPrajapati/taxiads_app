@@ -1,0 +1,66 @@
+For your Flutter project, here is the recommended Git commit workflow.
+
+## 1. Check current branch
+
+```
+git branch
+git status
+```
+
+## 2. Add your changes
+
+Add all changed files:
+
+```
+git add .
+```
+
+Or add a specific file:
+
+```
+git add pubspec.yaml
+```
+
+## 3. Commit your changes
+
+```
+git commit -m "feat: configure app icons for Android and iOS"
+```
+
+## 4. Push to GitHub
+
+```
+git push origin feature/app-icon-setup
+```
+
+## 5. Recommended commit message conventions
+
+| Prefix      | Usage            | Example                         |
+| ----------- | ---------------- | ------------------------------- |
+| `feat:`     | New feature      | `feat: add login screen`        |
+| `fix:`      | Bug fix          | `fix: resolve login validation` |
+| `style:`    | UI styling       | `style: update home screen UI`  |
+| `refactor:` | Code improvement | `refactor: improve API service` |
+| `docs:`     | Documentation    | `docs: update README`           |
+| `test:`     | Testing          | `test: add login unit tests`    |
+| `chore:`    | Configuration    | `chore: update dependencies`    |
+
+## 6. Complete example
+
+For your app icon setup:
+
+```
+git switch -c feature/app-icon-setup
+
+git add .
+
+git commit -m "feat: configure Android and iOS app icons"
+
+git push -u origin feature/app-icon-setup
+```
+
+Then create a Pull Request:
+
+`feature/app-icon-setup` → `develop`
+
+Best practice: Keep commits small, meaningful, and focused on one task. Avoid generic messages such as `update`, `changes`, or `final commit`.
